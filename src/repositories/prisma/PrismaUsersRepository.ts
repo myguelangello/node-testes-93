@@ -1,6 +1,6 @@
-import { prisma } from "../../database/client";
-import { User } from "../../entities/User";
-import { IUsersRepository } from "../IUsersRepositories";
+import { prisma } from '../../database/client'
+import { User } from '../../entities/User'
+import { IUsersRepository } from '../IUsersRepositories'
 
 class PrismaUsersRepository implements IUsersRepository {
   async exists(username: string): Promise<boolean> {
@@ -8,9 +8,9 @@ class PrismaUsersRepository implements IUsersRepository {
       where: {
         username,
       },
-    });
+    })
 
-    return !!user; // !!user -> true or false
+    return !!user // !!user -> true or false
   }
 
   async create({ username, email, name }: User): Promise<User> {
@@ -20,10 +20,10 @@ class PrismaUsersRepository implements IUsersRepository {
         email,
         name,
       },
-    });
+    })
 
-    return user;
+    return user
   }
 }
 
-export { PrismaUsersRepository };
+export { PrismaUsersRepository }
