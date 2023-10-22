@@ -9,7 +9,9 @@ interface IUserRequest {
 }
 
 class CreateUserService {
-  constructor(private usersRepository: IUsersRepository) { }
+  constructor(private usersRepository: IUsersRepository) {
+    // no implementation
+  }
 
   async execute({ email, username, name }: IUserRequest) {
     const userAlreadyExists = await this.usersRepository.exists(username)
