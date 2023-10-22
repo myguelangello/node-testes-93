@@ -10,7 +10,7 @@ class PrismaUsersRepository implements IUsersRepository {
       },
     });
 
-    return !!user;
+    return !!user; // !!user -> true or false
   }
 
   async create({ username, email, name }: User): Promise<User> {
